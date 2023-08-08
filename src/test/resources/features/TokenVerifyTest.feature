@@ -3,6 +3,7 @@ Feature: Token Verify Feature
   Background: setup test
     Given url "https://tek-insurance-api.azurewebsites.net"
 
+  #Scenario # 4
   Scenario: Verify a valid token
     And path "/api/token"
     And request {"username" : "supervisor", "password": "tek_supervisor"}
@@ -17,7 +18,7 @@ Feature: Token Verify Feature
     And print response
     And assert response == "true"
 
-  #Do Scenario # 5
+  #Scenario # 5
   Scenario: Verify token with invalid username
     And path "/api/token"
     And request {"username" : "supervisor", "password": "tek_supervisor"}
@@ -32,4 +33,12 @@ Feature: Token Verify Feature
     And print response
     And assert response.errorMessage == "Wrong Username send along with Token"
 
-    #Do Scenario # 6
+  #Scenario # 6
+  Scenario: Verify token with invalid token
+    Given path "/api/token/verify"
+    And param token = "Wrong Token"
+    And param username = "supervisor"
+    When method get
+    Then status 400
+    And print response
+    And assert response.errorMessage == "Token Expired or Invalid Token"
