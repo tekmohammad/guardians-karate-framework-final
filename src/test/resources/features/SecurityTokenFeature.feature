@@ -1,3 +1,4 @@
+@Smoke
 Feature: Security Token Tests
 
   Background: setup test

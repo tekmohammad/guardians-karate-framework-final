@@ -1,3 +1,4 @@
+@Regression
 Feature: Plan Code feature
 
   Background: Setup test and get valid token

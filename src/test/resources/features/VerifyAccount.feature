@@ -1,3 +1,4 @@
+@Regression
 Feature: Verify Account
 
   Background: setup test

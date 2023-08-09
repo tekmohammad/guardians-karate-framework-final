@@ -1,3 +1,4 @@
+@Regression
 Feature: Create Account feature
 
   Background: Setup test and generate token.
@@ -28,7 +29,3 @@ Feature: Create Account feature
     Then status 201
     And print response
     And assert response.email == autoEmail
-
-    
-    
-    
