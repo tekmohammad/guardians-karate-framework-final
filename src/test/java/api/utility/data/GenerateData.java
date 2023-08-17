@@ -4,9 +4,9 @@ public class GenerateData {
 	
 	
 	public static String getEmail() {
-		String prefix = "instructor_email";
+		String prefix = "auto_generate";
 		String provider = "@tekschool.us";		
-		int random = (int) (Math.random() * 10000);
+		int random = (int) (Math.random() * 1000000);
 		String email = prefix + random + provider; 
 		return email;
 	}
@@ -24,4 +24,13 @@ public class GenerateData {
 		}
 		return phoneNumber;
 	}
+	
+	public static String getLicensePlate() {
+        String prefix = "xyz";
+        String suffix = "abc";
+        int random = (int)(Math.random()*10000);
+        String licensePlate  = prefix + random + suffix;
+        return licensePlate;
+
+    }
 }
