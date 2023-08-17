@@ -34,7 +34,10 @@
 				<version>2.22.2</version>
 				<configuration>
 					<includes>
-						<include>TestRunner.java</include>
+						<!-- Parameterize Runner for Surefire Pluging -->
+						<!-- In order to run with maven command should -->
+						<!-- clean test -Drunner=<SmokeRunner / RegressionRunner> -->
+						<include>${runner}.java</include>
 					</includes>
 				</configuration>
 			</plugin>
